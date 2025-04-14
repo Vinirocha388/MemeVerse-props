@@ -1,6 +1,8 @@
+import { Inter } from "next/font/google";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import styles from "./page.module.css";
+import InteractionBar from "./components/InteractionBar";
 
 export default function Home() {
   // Array de dados dos memes para serem passados como props
@@ -257,24 +259,10 @@ export default function Home() {
                     <p className={styles.memeDescription}>{meme.description}</p>
 
                     {/* COMPONENTE: InteractionBar */}
-                    <div className={styles.interactionBar}>
-                      <div className={styles.interactionButton}>
-                        <span>👍</span>
-                        <span>{meme.likes}</span>
-                      </div>
-                      <div className={styles.interactionButton}>
-                        <span>💬</span>
-                        <span>{meme.comments}</span>
-                      </div>
-                      <div className={styles.interactionButton}>
-                        <span>🔄</span>
-                        <span>Share</span>
-                      </div>
-                      <div className={styles.interactionButton}>
-                        <span>🔖</span>
-                        <span>Save</span>
-                      </div>
-                    </div>
+                    <InteractionBar
+                      likes={meme.likes}
+                      comments={meme.comments}
+                    />
                     {/* FIM COMPONENTE: InteractionBar */}
                   </div>
                 </div>
