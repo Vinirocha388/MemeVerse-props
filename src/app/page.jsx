@@ -173,7 +173,16 @@ export default function Home() {
   return (
     <div className={styles.container}>
       {/* COMPONENTE: Header */}
-     <Header/>
+     <Header
+        logo="MemeVerse"
+        navItems={[
+          { label: "Início", href: "/", active: true },
+          { label: "Categorias", href: "/categories" },
+          { label: "Criar Meme", href: "/create" },
+          { label: "Eventos", href: "/events" },
+          { label: "Sobre", href: "/about" },
+        ]}
+     />
       {/* FIM COMPONENTE: Header */}
 
       <div className={styles.mainContent}>
