@@ -1,20 +1,29 @@
 import styles from './Header.module.css';
 
-export default function Header({ logo, navItems }) {
-  return (
-    <header className={styles.header}>
-      <div className={styles.logoSection}>
-        <img src={logo.image} alt={logo.name} className={styles.logoImage} />
-        <span className={styles.logoName}>{logo.name}</span>
-      </div>
-      <nav className={styles.nav}>
-        <ul>
-          {navItems.map((item, index) => (
-            <li key={index}><a href={item.href}>{item.label}</a></li>
-          ))}
-        </ul>
-      </nav>
-      <input type="text" placeholder="Buscar memes..." className={styles.searchInput} />
-    </header>
-  );
+const Header = () => {
+    return (
+         <header className={styles.header}>
+                <div className={styles.logo}>
+                  <h1>MemeVerse</h1>
+                  <span>🌟</span>
+                </div>
+                <nav className={styles.nav}>
+                  <a href="#" className={styles.active}>
+                    Home
+                  </a>
+                  <a href="#">Trending</a>
+                  <a href="#">Create</a>
+                  <a href="#">Categories</a>
+                  <a href="#">Profile</a>
+                </nav>
+        
+                <div className={styles.userActions}>
+                  <button className={styles.notificationBtn}>🔔</button>
+                  <button className={styles.userAvatar}>
+                    <img src="https://i.pravatar.cc/150?img=3" alt="Your profile" />
+                  </button>
+                </div>
+              </header>
+    )
 }
+export default Header;
