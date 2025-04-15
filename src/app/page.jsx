@@ -6,6 +6,7 @@ import HeroSection from "./components/HeroSection";
 import SideBar from "./components/SideBar";
 import Newsletter from "./components/Newsletter";
 import Feed from "./components/Feed";
+import CreatorSection from "./components/CreatorSection";
 
 export default function Home() {
   // Array de dados dos memes para serem passados como props
@@ -192,7 +193,6 @@ export default function Home() {
 
           {/* COMPONENTE: Feed */}
           <Feed memes={memes} />
-          {/* FIM COMPONENTE: Feed */}
 
           {/* COMPONENTE: FeaturedMemesSection */}
           <section className={styles.featuredSection}>
@@ -230,30 +230,7 @@ export default function Home() {
           {/* FIM COMPONENTE: FeaturedMemesSection */}
 
           {/* COMPONENTE: CreatorsSection */}
-          <section className={styles.creatorsSection}>
-            <h2 className={styles.sectionTitle}>Criadores em Destaque</h2>
-            <div className={styles.creatorsGrid}>
-              {topCreators.map((creator) => (
-                // COMPONENTE: CreatorCard
-                <div key={creator.id} className={styles.creatorCard}>
-                  <img
-                    src={creator.avatar}
-                    alt={creator.name}
-                    className={styles.creatorAvatar}
-                  />
-                  <h3 className={styles.creatorName}>{creator.name}</h3>
-                  <p className={styles.creatorBio}>{creator.bio}</p>
-                  <div className={styles.creatorStats}>
-                    <span className={styles.creatorFollowers}>
-                      {creator.followers} seguidores
-                    </span>
-                  </div>
-                  <button className={styles.followButton}>Seguir</button>
-                </div>
-                // FIM COMPONENTE: CreatorCard
-              ))}
-            </div>
-          </section>
+          <CreatorSection topCreators={topCreators} />
           {/* FIM COMPONENTE: CreatorsSection */}
 
           <Newsletter />
