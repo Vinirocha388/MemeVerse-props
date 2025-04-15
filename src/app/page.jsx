@@ -5,7 +5,7 @@ import CategoriesSection from "./components/CategoriesSection";
 import HeroSection from "./components/HeroSection";
 import SideBar from "./components/SideBar";
 import Newsletter from "./components/Newsletter";
-import MemeCard from "./components/MemeCard";
+import Feed from "./components/Feed";
 
 export default function Home() {
   // Array de dados dos memes para serem passados como props
@@ -191,42 +191,7 @@ export default function Home() {
           <CategoriesSection categories={categories} />
 
           {/* COMPONENTE: Feed */}
-          <section className={styles.feedSection}>
-            <div className={styles.feedHeader}>
-              <h2 className={styles.sectionTitle}>Memes Populares</h2>
-              <div className={styles.feedFilters}>
-                <button className={`${styles.filterButton} ${styles.active}`}>
-                  Recentes
-                </button>
-                <button className={styles.filterButton}>Mais curtidos</button>
-                <button className={styles.filterButton}>Mais comentados</button>
-              </div>
-            </div>
-
-            <div className={styles.feedGrid}>
-              {/* Aqui mapeamos os memes do array para criar múltiplos cards */}
-              {memes.map((meme) => (
-                // COMPONENTE: MemeCard
-               <MemeCard 
-                  key={meme.id}
-                  id={meme.id}
-                  title={meme.title}
-                  description={meme.description}
-                  image={meme.image}
-                  author={meme.author}
-                  category={meme.category}
-                  likes={meme.likes}
-                  comments={meme.comments}
-                  authorAvatar={meme.authorAvatar}
-                />
-                // FIM COMPONENTE: MemeCard
-              ))}
-            </div>
-
-            <button className={styles.loadMoreButton}>
-              Carregar mais memes
-            </button>
-          </section>
+          <Feed memes={memes} />
           {/* FIM COMPONENTE: Feed */}
 
           {/* COMPONENTE: FeaturedMemesSection */}
