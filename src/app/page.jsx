@@ -7,6 +7,7 @@ import SideBar from "./components/SideBar";
 import Newsletter from "./components/Newsletter";
 import Feed from "./components/Feed";
 import CreatorSection from "./components/CreatorSection";
+import FeaturedMemesSection from "./components/FeaturedMemesSection";
 
 export default function Home() {
   // Array de dados dos memes para serem passados como props
@@ -195,43 +196,13 @@ export default function Home() {
           <Feed memes={memes} />
 
           {/* COMPONENTE: FeaturedMemesSection */}
-          <section className={styles.featuredSection}>
-            <h2 className={styles.sectionTitle}>Memes em Destaque</h2>
-            <div className={styles.featuredGrid}>
-              {featuredMemes.map((meme) => (
-                // COMPONENTE: FeaturedMemeCard
-                <div key={meme.id} className={styles.featuredCard}>
-                  <div className={styles.featuredImageContainer}>
-                    <img
-                      src={meme.image}
-                      alt={meme.title}
-                      className={styles.featuredImage}
-                    />
-                    {meme.trending && (
-                      <span className={styles.trendingBadge}>🔥 Trending</span>
-                    )}
-                  </div>
-                  <div className={styles.featuredContent}>
-                    <h3 className={styles.featuredTitle}>{meme.title}</h3>
-                    <div className={styles.featuredInfo}>
-                      <span className={styles.featuredAuthor}>
-                        Por {meme.author}
-                      </span>
-                      <span className={styles.featuredCategory}>
-                        {meme.category}
-                      </span>
-                    </div>
-                  </div>
-                </div>
-                // FIM COMPONENTE: FeaturedMemeCard
-              ))}
-            </div>
-          </section>
+          <FeaturedMemesSection featuredMemes={featuredMemes} />
           {/* FIM COMPONENTE: FeaturedMemesSection */}
 
           {/* COMPONENTE: CreatorsSection */}
           <CreatorSection topCreators={topCreators} />
-          {/* FIM COMPONENTE: CreatorsSection */}
+
+          {/* COMPONENTE: Newsletter */}
 
           <Newsletter />
         </div>
