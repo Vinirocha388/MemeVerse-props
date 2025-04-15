@@ -5,6 +5,7 @@ import InteractionBar from "./components/InteractionBar";
 import CategoriesSection from "./components/CategoriesSection";
 import HeroSection from "./components/HeroSection";
 import SideBar from "./components/SideBar";
+import Newsletter from "./components/Newsletter";
 
 export default function Home() {
   // Array de dados dos memes para serem passados como props
@@ -172,8 +173,7 @@ export default function Home() {
 
   return (
     <div className={styles.container}>
-      {/* COMPONENTE: Header */}
-     <Header
+      <Header
         logo="MemeVerse"
         navItems={[
           { label: "Início", href: "/", active: true },
@@ -182,18 +182,13 @@ export default function Home() {
           { label: "Eventos", href: "/events" },
           { label: "Sobre", href: "/about" },
         ]}
-     />
-      {/* FIM COMPONENTE: Header */}
+      />
 
       <div className={styles.mainContent}>
         <div className={styles.contentArea}>
-          {/* COMPONENTE: HeroSection */}
- <HeroSection memeOfTheDay={memeOfTheDay} />
-          {/* FIM COMPONENTE: HeroSection */}
+          <HeroSection memeOfTheDay={memeOfTheDay} />
 
-          {/* COMPONENTE: CategoriesSection */}
-         <CategoriesSection categories={categories}/>
-          {/* FIM COMPONENTE: CategoriesSection */}
+          <CategoriesSection categories={categories} />
 
           {/* COMPONENTE: Feed */}
           <section className={styles.feedSection}>
@@ -309,38 +304,10 @@ export default function Home() {
           </section>
           {/* FIM COMPONENTE: CreatorsSection */}
 
-          {/* COMPONENTE: NewsletterSection */}
-          <section className={styles.newsletterSection}>
-            <div className={styles.newsletterContent}>
-              <h2 className={styles.newsletterTitle}>Fique por dentro!</h2>
-              <p className={styles.newsletterDescription}>
-                Assine nossa newsletter e receba os melhores memes toda semana!
-              </p>
-              <div className={styles.newsletterForm}>
-                <input
-                  type="email"
-                  placeholder="Seu melhor e-mail"
-                  className={styles.newsletterInput}
-                />
-                <button className={styles.newsletterButton}>Assinar</button>
-              </div>
-              <p className={styles.newsletterDisclaimer}>
-                Nós respeitamos sua privacidade. Cancele quando quiser.
-              </p>
-            </div>
-            <div className={styles.newsletterImageContainer}>
-              <img
-                src="https://i.imgur.com/OELrGl5.jpg"
-                alt="Newsletter"
-                className={styles.newsletterImage}
-              />
-            </div>
-          </section>
-          {/* FIM COMPONENTE: NewsletterSection */}
+          <Newsletter />
         </div>
 
-        {/* COMPONENTE: Sidebar */}
-        <SideBar 
+        <SideBar
           events={upcomingEvents}
           premiumFeatures={[
             "Templates exclusivos",
@@ -356,20 +323,13 @@ export default function Home() {
             { name: "Trabalho", size: "small" },
           ]}
         />
-        {/* FIM COMPONENTE: Sidebar */}
       </div>
 
-      {/* COMPONENTE: Footer */}
-     <Footer footerData={[
+      <Footer
+        footerData={[
           {
             title: "Navegação",
-            links: [
-              "Home",
-              "Trending",
-              "Create",
-              "Categories",
-              "Profile",
-            ],
+            links: ["Home", "Trending", "Create", "Categories", "Profile"],
           },
           {
             title: "Recursos",
@@ -382,31 +342,20 @@ export default function Home() {
           },
           {
             title: "Empresa",
-            links: [
-              "Sobre nós",
-              "Carreiras",
-              "Blog",
-              "Contato",
-            ],
+            links: ["Sobre nós", "Carreiras", "Blog", "Contato"],
           },
           {
             title: "Legal",
-            links: [
-              "Termos de Uso",
-              "Privacidade",
-              "Cookies",
-            ],
+            links: ["Termos de Uso", "Privacidade", "Cookies"],
           },
-      ]}
+        ]}
         socialLinks={[
           { icon: "📘" },
           { icon: "📸" },
           { icon: "🐦" },
           { icon: "🔗" },
-        ]}  />
-
-     
-      {/* FIM COMPONENTE: Footer */}
+        ]}
+      />
     </div>
   );
 }
