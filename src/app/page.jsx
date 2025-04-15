@@ -1,11 +1,11 @@
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import styles from "./page.module.css";
-import InteractionBar from "./components/InteractionBar";
 import CategoriesSection from "./components/CategoriesSection";
 import HeroSection from "./components/HeroSection";
 import SideBar from "./components/SideBar";
 import Newsletter from "./components/Newsletter";
+import MemeCard from "./components/MemeCard";
 
 export default function Home() {
   // Array de dados dos memes para serem passados como props
@@ -207,31 +207,18 @@ export default function Home() {
               {/* Aqui mapeamos os memes do array para criar múltiplos cards */}
               {memes.map((meme) => (
                 // COMPONENTE: MemeCard
-                <div key={meme.id} className={styles.memeCard}>
-                  <div className={styles.memeCardHeader}>
-                    <div className={styles.memeAuthor}>
-                      <img src={meme.authorAvatar} alt={meme.author} />
-                      <span>{meme.author}</span>
-                    </div>
-                    <span className={styles.memeCategory}>{meme.category}</span>
-                  </div>
-                  <img
-                    src={meme.image}
-                    alt={meme.title}
-                    className={styles.memeImage}
-                  />
-                  <div className={styles.memeContent}>
-                    <h3 className={styles.memeTitle}>{meme.title}</h3>
-                    <p className={styles.memeDescription}>{meme.description}</p>
-
-                    {/* COMPONENTE: InteractionBar */}
-                    <InteractionBar
-                      likes={meme.likes}
-                      comments={meme.comments}
-                    />
-                    {/* FIM COMPONENTE: InteractionBar */}
-                  </div>
-                </div>
+               <MemeCard 
+                  key={meme.id}
+                  id={meme.id}
+                  title={meme.title}
+                  description={meme.description}
+                  image={meme.image}
+                  author={meme.author}
+                  category={meme.category}
+                  likes={meme.likes}
+                  comments={meme.comments}
+                  authorAvatar={meme.authorAvatar}
+                />
                 // FIM COMPONENTE: MemeCard
               ))}
             </div>
