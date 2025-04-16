@@ -1,6 +1,6 @@
-# 🧩 Meme App - Frontend
+# 🧩 MemeVerse - Frontend
 
-Bem-vindo ao repositório do **Meme App**, uma aplicação web moderna para compartilhar e explorar os memes mais engraçados da internet. Este projeto foi construído com foco em **componentização, performance e responsividade**.
+Bem-vindo ao repositório do **MemeVerse**, uma aplicação web moderna para compartilhar e explorar os memes mais engraçados da internet. Este projeto foi construído com foco em **componentização, performance e responsividade**.
 
 ---
 
