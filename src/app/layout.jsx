@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 
 export const metadata = {
   title: "MemeVerse",
-  description: "Projeto avaliativo com a utilização de Next.js componentização e porps",
+  description: "Projeto avaliativo com a utilização de Next.js componentização e props",
 };
 
 export default function RootLayout({ children }) {
